@@ -1,0 +1,185 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+  }
+  
+  .hero {
+    background: linear-gradient(45deg, #2d3436, #0984e3);
+    color: #fff;
+    text-align: center;
+    padding: 4em 0;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  .about, .services, .projects, .contact {
+    padding: 2em 0;
+    text-align: center;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 1em;
+  }
+  
+  .service-card {
+    padding: 1em;
+    background-color: #dfe6e9;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-mockups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    margin-top: 1em;
+  }
+  
+  .contact form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact form input, .contact form textarea {
+    margin-bottom: 1em;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact form button {
+    background-color: #0984e3;
+    color: #fff;
+    padding: 0.75em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact form button:hover {
+    background-color: #74b9ff;
+  }
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #2d3436;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand a {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5em;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Hover underline effect */
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #74b9ff;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+.navbar-links li a:hover {
+  color: #74b9ff;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Nav Toggle */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+/* Navbar Responsive */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2d3436;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Toggle button animation */
+  .navbar-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
